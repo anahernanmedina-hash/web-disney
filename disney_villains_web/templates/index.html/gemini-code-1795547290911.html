@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio | Campaña Especial Villanas de Disney{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <span class="badge">Evento Temporal Exclusivo • Edición Limitada</span>
+    <h1>Noches de Villanos: El lado oscuro toma el control</h1>
+    <p>Por tiempo limitado, los cuentos de hadas cambian de dueño. Vive espectáculos nocturnos inmersivos en nuestros parques, estrenos exclusivos en Disney+ y colecciones de moda inspiradas en las antagonistas más icónicas de la historia del cine.</p>
+    <a href="{{ url_for('contacto') }}" class="btn">Reservar Entradas VIP al Evento</a>
+</section>
+
+<h2 class="section-title">Estrategia de la Campaña Puntual</h2>
+<div class="grid">
+    <div class="strategy-box">
+        <h3>🎯 Finalidad del Sitio Web</h3>
+        <p>Este portal funciona como <strong>landing page promocional y centro informativo</strong> para una estrategia de marketing estacional. Su objetivo es generar urgencia y captar ventas de entradas para el evento nocturno <em>"Disney Villains After Hours"</em>, impulsar suscripciones a Disney+ durante la temporada de otoño/Halloween y redirigir tráfico hacia la tienda oficial de productos de edición limitada.</p>
+    </div>
+    <div class="strategy-box">
+        <h3>👥 Público Objetivo (Target)</h3>
+        <p>A diferencia de las campañas familiares tradicionales de Disney, esta acción puntual está diseñada específicamente para:</p>
+        <ul style="margin-left: 1.2rem; margin-top: 0.5rem; color: var(--text-muted);">
+            <li><strong>Jóvenes adultos y adolescentes (16 a 35 años):</strong> Buscadores de experiencias nocturnas y ocio temático.</li>
+            <li><strong>Fans nostálgicos:</strong> Seguidores que crecieron con los clásicos animados de los años 50 a los 90.</li>
+            <li><strong>Amantes de la estética gótica, alternativa y cultura pop:</strong> Consumidores atraídos por el diseño oscuro, el coleccionismo y la moda inspirada en villanos.</li>
+        </ul>
+    </div>
+</div>
+
+<h2 class="section-title">Anfitrionas del Evento</h2>
+<div class="grid">
+    <div class="card">
+        <span class="tag">LA BELLA DURMIENTE</span>
+        <h3>Maléfica</h3>
+        <p>La emperatriz del mal lidera el espectáculo principal de fuego verde y proyecciones sobre el castillo central.</p>
+    </div>
+    <div class="card">
+        <span class="tag">LA SIRENITA</span>
+        <h3>Úrsula</h3>
+        <p>Anfitriona de la zona musical submarina con cócteles temáticos y encuentros interactivos exclusivos.</p>
+    </div>
+    <div class="card">
+        <span class="tag">101 DÁLMATAS</span>
+        <h3>Cruella de Vil</h3>
+        <p>Protagonista de la pasarela de moda nocturna y diseñadora de la nueva línea de ropa cápsula.</p>
+    </div>
+    <div class="card">
+        <span class="tag">BLANCANIEVES</span>
+        <h3>La Reina Malvada</h3>
+        <p>Presenta la experiencia gastronómica "La Manzana Envenenada" con postres de alta repostería.</p>
+    </div>
+</div>
+{% endblock %}

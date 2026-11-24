@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Disney | Noches de Villanos{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('inicio') }}" class="logo">
+                DISNEY
+                <span>Villains Edition</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('inicio') }}" class="{{ 'active' if active_page == 'inicio' else '' }}">Inicio</a></li>
+                <li><a href="{{ url_for('nosotros') }}" class="{{ 'active' if active_page == 'nosotros' else '' }}">Quiénes somos</a></li>
+                <li><a href="{{ url_for('servicios') }}" class="{{ 'active' if active_page == 'servicios' else '' }}">Productos y servicios</a></li>
+                <li><a href="{{ url_for('contacto') }}" class="{{ 'active' if active_page == 'contacto' else '' }}">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Walt Disney Company — Campaña Especial "El Reino de las Villanas".</p>
+        <p>Proyecto académico de diseño y desarrollo web con Python &amp; Flask.</p>
+    </footer>
+
+</body>
+</html>

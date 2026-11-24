@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto y Reservas | Disney Villains{% endblock %}
+
+{% block content %}
+<h2 class="section-title">Contacto y Reserva de Entradas</h2>
+<p style="margin-bottom: 2rem; color: var(--text-muted);">¿Deseas adquirir entradas anticipadas para las <strong>Noches de Villanos</strong> o realizar una consulta corporativa? Completa el siguiente formulario.</p>
+
+<div class="form-container">
+    {% if mensaje_enviado %}
+        <div class="alert-success">
+            <h3>✨ ¡Solicitud recibida en el Reino Oscuro!</h3>
+            <p style="margin-top: 0.5rem;">Gracias, <strong>{{ datos.nombre }}</strong>. Hemos registrado tu consulta bajo el asunto <em>"{{ datos.asunto }}"</em>.</p>
+            <p style="margin-top: 0.5rem;">Te responderemos a la brevedad al correo <strong>{{ datos.email }}</strong>.</p>
+        </div>
+    {% endif %}
+
+    <form action="{{ url_for('contacto') }}" method="POST">
+        <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Sofía Martínez">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required placeholder="tu.correo@ejemplo.com">
+        </div>
+
+        <div class="form-group">
+            <label for="asunto">Motivo de contacto *</label>
+            <select id="asunto" name="asunto" required>
+                <option value="Entradas Evento Noches de Villanos">🎟️ Reserva de Entradas — Evento Noches de Villanos</option>
+                <option value="Merchandising Edición Limitada">🛍️ Información sobre Colección Villanas</option>
+                <option value="Suscripción Disney+">📺 Soporte y promociones Disney+</option>
+                <option value="Prensa y Colaboraciones">📰 Prensa / Consulta Corporativa</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Indica la fecha deseada para el evento o detalla tu consulta..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Enviar Solicitud</button>
+    </form>
+</div>
+{% endblock %}
